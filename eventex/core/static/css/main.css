@@ -370,4 +370,9 @@ section header h2 {
     border-radius: 100%;
 }
 
+.speakers img.photo{
+    float:left;
+    padding-right: 15px;
+}
+
 /* Fim Customização */
