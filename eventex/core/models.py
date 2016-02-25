@@ -43,7 +43,7 @@ class Contact(models.Model):
         return self.value
 
 
-class Activity(models.Model):
+class Talk(models.Model):
     title = models.CharField('título', max_length=200)
     start = models.TimeField('início', blank=True, null=True)
     description = models.TextField('descrição', blank=True)
@@ -52,7 +52,7 @@ class Activity(models.Model):
     objects = PeriodManager()
 
     class Meta:
-        abstract = True
+        ordering = ['start']
         verbose_name_plural = 'palestras'
         verbose_name = 'palestra'
 
@@ -60,12 +60,10 @@ class Activity(models.Model):
         return self.title
 
 
-class Talk(Activity):
-    pass
-
-
-class Course(Activity):
+class Course(Talk):
     slots = models.IntegerField()
+
+    objects = PeriodManager()
 
     class Meta:
         verbose_name = 'curso'
