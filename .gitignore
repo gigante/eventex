@@ -1,6 +1,6 @@
 .env
 .idea
-.wttd
+.venv
 *.sqlite3
 *pyc
 __pycache__
