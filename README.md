@@ -3,6 +3,7 @@
 Sistema de Eventos encomendado pela Morena
 
 [![Code Climate](https://codeclimate.com/github/gigante/eventex/badges/gpa.svg)](https://codeclimate.com/github/gigante/eventex)
+[![Test Coverage](https://codeclimate.com/github/gigante/eventex/badges/coverage.svg)](https://codeclimate.com/github/gigante/eventex/coverage)
 [![Build Status](https://travis-ci.org/gigante/eventex.svg?branch=master)](https://travis-ci.org/gigante/eventex)
 
 ## Como Desenvolver
