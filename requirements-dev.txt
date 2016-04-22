@@ -1,2 +1,4 @@
 -r requirements.txt
 ipython[notebook]
+coverage==4.0.3
+codeclimate-test-reporter

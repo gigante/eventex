@@ -6,3 +6,4 @@
 __pycache__
 staticfiles
 .ipynb_checkpoints/
+.coverage
