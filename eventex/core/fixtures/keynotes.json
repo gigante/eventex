@@ -1,7 +1,7 @@
 [
 {
     "model": "core.speaker",
-    "pk": 1,
+    "pk": "f13675d6-84ec-11e6-b6d1-641c676fb0f6",
     "fields": {
         "name": "Grace Hopper",
         "slug": "grace-hopper",
@@ -12,7 +12,7 @@
 },
 {
     "model": "core.speaker",
-    "pk": 2,
+    "pk": "f0ccfa20-84ec-11e6-acb2-641c676fb0f6",
     "fields": {
         "name": "Alan Turing",
         "slug": "alan-turing",

@@ -41,13 +41,13 @@ class SubscriptionsNewGet(TestCase):
 
 class SubscriptionNewPostValid(TestCase):
     def setUp(self):
-        data = dict(name='Hiarison Gigante', cpf='60211656321',
-                    email='gigantedesousa@gmail.com', phone='21-99618-6180')
+        data = dict(name='Hiarison Gigante', cpf='12345678901',
+                    email='exemplo@gmail.com', phone='+55 21 9900 9900')
         self.resp = self.client.post(r('subscriptions:new'), data)
 
     def test_post(self):
-        """Valid POST should redirect to /inscricao/1/"""
-        s = Subscription.objects.get(cpf='60211656321')
+        """Valid POST should redirect to /inscricao/id/"""
+        s = Subscription.objects.get(cpf='12345678901')
         self.assertEqual(302, self.resp.status_code)
         self.assertRedirects(self.resp, r('subscriptions:detail', s.id))
 

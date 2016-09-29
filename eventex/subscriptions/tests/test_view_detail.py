@@ -8,8 +8,8 @@ class SubscriptionDetailGet(TestCase):
         self.obj = Subscription.objects.create(
             name='Hiarison Gigante',
             cpf='12345678901',
-            email='gigantedesousa@gmail.com',
-            phone='99-99133-5407'
+            email='exemplo@gmail.com',
+            phone='+55 21 9900 9900'
         )
         self.resp = self.client.get(r('subscriptions:detail', self.obj.pk))
 
@@ -34,5 +34,6 @@ class SubscriptionDetailGet(TestCase):
 
 class SubscriptionDetailNotFound(TestCase):
     def test_not_found(self):
-        resp = self.client.get(r('subscriptions:detail', 0))
+        id = '00000000-0000-0000-0000-000000000000'
+        resp = self.client.get(r('subscriptions:detail', id))
         self.assertEqual(404, resp.status_code)

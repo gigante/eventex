@@ -1,9 +1,12 @@
+import uuid
+
 from django.db import models
 from django.shortcuts import resolve_url as r
 from eventex.subscriptions.validators import validate_cpf
 
 
 class Subscription(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField('nome', max_length=100)
     cpf = models.CharField('CPF', max_length=11, validators=[validate_cpf])
     email = models.EmailField('e-mail', blank=True)

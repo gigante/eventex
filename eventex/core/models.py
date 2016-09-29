@@ -1,9 +1,12 @@
+import uuid
+
 from django.db import models
 from django.shortcuts import resolve_url as r
 from eventex.core.managers import KindQuerySet, PeriodManager
 
 
 class Speaker(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField('nome', max_length=255)
     slug = models.SlugField('slug')
     photo = models.URLField('foto')
@@ -29,6 +32,7 @@ class Contact(models.Model):
         (EMAIL, 'Email'),
         (PHONE, 'Telefone'),
     )
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     speaker = models.ForeignKey('Speaker', verbose_name='palestrante')
     kind = models.CharField('tipo', max_length=1, choices=KINDS)
     value = models.CharField('valor', max_length=255)
@@ -44,6 +48,7 @@ class Contact(models.Model):
 
 
 class Talk(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField('título', max_length=200)
     start = models.TimeField('início', blank=True, null=True)
     description = models.TextField('descrição', blank=True)
